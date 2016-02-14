@@ -1,7 +1,7 @@
 #include "StdAfx.h"
 #include "GameBall.h"
 #include "Game.h"
-
+#include "ServiceLocator.h"
 
 GameBall::GameBall() :
 	_velocity(230.0f),
@@ -83,7 +83,7 @@ void GameBall::Update(float elapsedTime) //Parameter is the time since last fram
 				_angle += 20.0f;
 				if (_angle > 360.0f) _angle = _angle - 360.0f;
 			}
-
+			//ServiceLocator::GetAudio()->PlaySound("audio/kaboom.wav");
 			_velocity += 5.0f;
 		}
 
