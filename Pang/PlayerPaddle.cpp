@@ -4,7 +4,7 @@
 
 PlayerPaddle::PlayerPaddle() :
 	_velocity(0),
-	_maxVelocity(1200.0f)
+	_maxVelocity(600.0f)
 {
 	Load("images/paddle.png");
 	assert(IsLoaded());
@@ -53,7 +53,7 @@ void PlayerPaddle::Update(float elapsedTime)
 	sf::Vector2f pos = this->GetPosition();
 
 	if (pos.x  < GetSprite().getLocalBounds().width / 2
-		|| pos.x >(Game::SCREEN_WIDTH - GetSprite().getLocalBounds().width / 2))
+		|| pos.x > (Game::SCREEN_WIDTH - GetSprite().getLocalBounds().width / 2))
 	{
 		_velocity = -_velocity; // Bounce by current velocity in opposite direction
 	}
